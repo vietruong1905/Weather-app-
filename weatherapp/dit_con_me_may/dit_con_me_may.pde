@@ -8,5 +8,4 @@ void draw(){// city call, see procedure using boolean & button
 }
 void mousePressed(){}
 
-
 void keyPressed(){}

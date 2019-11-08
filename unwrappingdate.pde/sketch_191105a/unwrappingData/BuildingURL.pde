@@ -13,7 +13,7 @@ String albertaId = " id=5883102"; //City ID Numbers
 String edmontonId = " id= 5946768";
 String CalgaryId = " id= 5913490";
 String vancouverId = " id= 6173331";
-String apiKey= "APPID="; 
+String apiKey= "APPID=eb6f025db8559f7fe536378c831d83e7";
 String mode="mode=json";
 String unitMetric ="units=metric";
 String and="&"; 
