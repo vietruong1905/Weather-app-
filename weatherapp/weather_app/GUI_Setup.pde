@@ -2,9 +2,12 @@
 color black = 0;
 float titleX, titleY, titleRecwidth, titleRecHeight;
 float quitX, quitY, quitRecWidth, quitRecHeight;
-float currentAPIX, currentAPIY, currentAPIRecWidth, currentAPIRecHeight;
 float TempX, TempY, TempRecwidth, TempRecHeight;
+float Tmx, Tmy, Tmwidth, Tmheight;
 float EDMx, EDMy, EDMwidth, EDMheight;
+float Calx, Caly, Calwidth, Calheight;
+float Vanx, Vany, Vanwidth, Vanheight;
+
 
 void GUI_Setup() {
   background(black); // Add dark mode
@@ -20,16 +23,39 @@ void GUI_Setup() {
  quitRecWidth = width *1/10;
  quitRecHeight = height *1/10;
  rect(quitX, quitY, quitRecWidth, quitRecHeight);
-
- currentAPIX = width*0;
- currentAPIY = height*1/10 ;
- currentAPIRecWidth = width*1 ;
- currentAPIRecHeight = height*1/2/10;
- rect(currentAPIX, currentAPIY, currentAPIRecWidth, currentAPIRecHeight);
+//
+  
  //
- TempX= width*0;
- TempY=height*3/20;
- TempRecwidth=width*1;
- TempRecHeight=height*5/10;
+ TempX= width*1/5;
+ TempY=height*1/10;
+ TempRecwidth=width*3/5;
+ TempRecHeight=height*2.5/10;
  rect(TempX, TempY, TempRecwidth, TempRecHeight);
+//
+ Tmx= width*1/10;
+ Tmy= height*3.5/10;
+ Tmwidth= width*7/20;
+ Tmheight= height*3/5;
+ rect(Tmx, Tmy, Tmwidth, Tmheight);
+ //
+ EDMx= width*0;
+ EDMy= height*13/20;
+ EDMwidth= width*1/3;
+ EDMheight= height*7/20;
+ rect( EDMx, EDMy, EDMwidth, EDMheight);
+ //
+ Calx= width*1/3;
+ Caly= height*13/20;
+ Calwidth= width*1/3;
+ Calheight= height*7/20;
+ rect(Calx, Caly, Calwidth, Calheight);
+ //
+ Vanx= width*2/3;
+ Vany= height*13/20;
+ Vanwidth= width*1/3;
+ Vanheight= height*7/20;
+  rect(Vanx, Vany, Vanwidth, Vanheight);
+ 
+ 
+ 
  }
