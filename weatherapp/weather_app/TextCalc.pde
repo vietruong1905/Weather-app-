@@ -4,18 +4,24 @@ PFont titleFont;
 String title, quit, timestamp, currentTempEdm, currentTempCal, currentTempVan;
 String nameEdm, nameCal, nameVan; 
 void textSetup() {
- //title = ;
- //quit = "X"; 
- //timestamp=;
- //currentTempEdm=;
-// currentTempCal=;
- //currentTempVan=;
- //nameEdm=;
- //nameCal=;
- //nameVan=;
+ title = " Viet truong's App";
+ quit = "X"; 
+  
+ currentTempEdm= tempEdmonton;
+currentTempCal= tempCalgary;
+currentTempVan= temp Vancover;
+ nameEdm= nameEdmonton;
+ nameCal= nameCalgary;
+ nameVan= nameVancover;
 }
  //printArray(fontList);
-void textdraw() {}
+void textdraw() {
+fill(black);
+textAlign(CENTER, CENTER); 
+textFont(titleFont,20); 
+text(title,x,y, rectwidth, rectheight); // string, rect parameters
+fill(white);
+}
 //float textCalculator () {
   //return size; 
   

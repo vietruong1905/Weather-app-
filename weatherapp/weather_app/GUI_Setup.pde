@@ -35,7 +35,7 @@ void GUI_Setup() {
 //
  Tmx= width*1/10;
  Tmy= height*3.5/10;
- Tmwidth= width*7/20;
+ Tmwidth= width*1/3;
  Tmheight= height*3/5;
  rect(Tmx, Tmy, Tmwidth, Tmheight);
  //
