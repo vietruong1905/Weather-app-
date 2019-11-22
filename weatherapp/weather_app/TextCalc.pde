@@ -9,7 +9,7 @@ void textSetup() {
   
  currentTempEdm= tempEdmonton;
 currentTempCal= tempCalgary;
-currentTempVan= temp Vancover;
+currentTempVan= tempVancover;
  nameEdm= nameEdmonton;
  nameCal= nameCalgary;
  nameVan= nameVancover;
