@@ -5,6 +5,7 @@ float titleX, titleY, titleRecwidth, titleRecHeight;
 float quitX, quitY, quitRecWidth, quitRecHeight;
 float TempX, TempY, TempRecwidth, TempRecHeight;
 float Tmx, Tmy, Tmwidth, Tmheight;
+float Tmaxx, Tmaxy, Tmaxwidth, Tmaxheight;
 float EDMx, EDMy, EDMwidth, EDMheight;
 float Calx, Caly, Calwidth, Calheight;
 float Vanx, Vany, Vanwidth, Vanheight;
@@ -35,9 +36,15 @@ void GUI_Setup() {
 //
  Tmx= width*1/10;
  Tmy= height*3.5/10;
- Tmwidth= width*1/3;
- Tmheight= height*3/5;
+ Tmwidth= width*7/30;
+ Tmheight= height*3/10;
  rect(Tmx, Tmy, Tmwidth, Tmheight);
+ //
+ Tmaxx= width*2/3;
+ Tmaxy= height*3.5/10;
+ Tmaxwidth= width*7/30;
+ Tmaxheight= height*3/10;
+ rect(Tmaxx, Tmaxy, Tmaxwidth, Tmaxheight);
  //
  EDMx= width*0;
  EDMy= height*13/20;
