@@ -7,7 +7,7 @@ float currentTempEdm, currentTempCalgary, currentTempRD;
 String nameEdm, nameCalg, nameRD;
 
 void textSetup() {
-  titleFont = createFont ("Harrington", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
+  titleFont = createFont ("Power Clear Bold", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
   title = "Viet's weather app";
   titleWidth = width * 1/2;
   titleHeight = height * 1/10;

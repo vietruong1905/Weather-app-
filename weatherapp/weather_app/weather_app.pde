@@ -16,15 +16,15 @@ void setup() {
   textDraw(title, titleFont, height, #2C08FF, CENTER, CENTER, titleX, titleY, titleRecwidth, titleRecHeight); //Title
   textDraw(quit, titleFont, height, #2C08FF, CENTER, CENTER, quitX, quitY, quitRecWidth, quitRecHeight); //Quit Button
   //String strDate = Date.format(apiCurrentDateCall);
-  SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); 
-  formatter = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");  
-  String strDate = formatter.format(apiCurrentDateCall);
-  textDraw(strDate, titleFont, height, #2C08FF, LEFT, CENTER, currentAPIX, currentAPIY, currentAPIRectWidth, currentAPIRectHeight); //Time Stamp
+  //SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy"); 
+ // formatter = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");  
+  //String strDate = formatter.format(apiCurrentDateCall);
+ // textDraw(strDate, titleFont, height, #2C08FF, LEFT, CENTER, currentAPIX, currentAPIY, currentAPIRectWidth, currentAPIRectHeight); //Time Stamp
   println("in");
-  textDraw(nameEdm, titleFont, height, #2C08FF, LEFT, CENTER, apiCallX1, apiCallY1, apiCallRectWidth1, apiCallRectHeight1); //Edmonton
+  textDraw(nameEdm, titleFont, height, #2C08FF, LEFT, CENTER, EDMx, EDMy, EDMwidth, EDMheight); //Edmonton
   println(nameEdm);
-  textDraw(nameCalg, titleFont, height, #2C08FF, LEFT, CENTER, apiCallX2, apiCallY2, apiCallRectWidth2, apiCallRectHeight2); //Calgary
-  textDraw(nameRD, titleFont, height, #2C08FF, LEFT, CENTER, apiCallX3, apiCallY3, apiCallRectWidth3, apiCallRectHeight3); //Vancouver
+  textDraw(nameCalg, titleFont, height, #2C08FF, LEFT, CENTER, Calx, Caly, Calwidth, Calheight); //Calgary
+  textDraw(nameRD, titleFont, height, #2C08FF, LEFT, CENTER, Vanx, Vany, Vanwidth, Vanheight); //Vancouver
 }
 
 void draw() {
@@ -39,17 +39,17 @@ void mousePressed() {
   // City Call, see procedure using Boolean & Button
   //
   
-  if ( mouseX>apiCallX1 && mouseX<apiCallX1+apiCallRectWidth1 && mouseY>apiCallY1 && mouseY<apiCallY1+apiCallRectHeight1 ) {
+  if ( mouseX>EDMx && mouseX<EDMx+EDMwidth && mouseY>EDMy && mouseY<EDMy+EDMheight ) {
     edmTemp = String.valueOf(tempEdmonton);
-    rect(currentTempX, currentTempY, currentTempRectWidth, currentTempRectHeight);
-    textDraw(edmTemp, titleFont, height, #2C08FF, CENTER, CENTER, currentTempX, currentTempY, currentTempRectWidth, currentTempRectHeight); //Edmonton
+    rect(TempX, TempY, TempRecwidth, TempRecHeight);
+    textDraw(edmTemp, titleFont, height, #2C08FF, CENTER, CENTER, TempX, TempY, TempRecwidth, TempRecHeight); //Edmonton
     println(tempEdmonton, edmTemp);
   }
   //
-  if (mouseX>apiCallX2 && mouseX<apiCallX2+apiCallRectWidth2 && mouseY>apiCallY2 && mouseY<apiCallY2+apiCallRectHeight2) {
+  if (mouseX>Calx && mouseX<Calx+Calwidth && mouseY>Caly && mouseY<Caly+Calheight) {
     calgTemp = String.valueOf(tempCalgary);
-    rect(currentTempX, currentTempY, currentTempRectWidth, currentTempRectHeight);
-    textDraw(calgTemp, titleFont, height, #2C08FF, CENTER, CENTER, currentTempX, currentTempY, currentTempRectWidth, currentTempRectHeight); //Calgary
+    rect(TempX, TempY, TempRecwidth, TempRecHeight);
+    textDraw(calgTemp, titleFont, height, #2C08FF, CENTER, CENTER, TempX, TempY, TempRecwidth, TempRecHeight); //Calgary
     println(tempCalgary, calgTemp);
   }
   //
