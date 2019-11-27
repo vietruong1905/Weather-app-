@@ -1,37 +1,42 @@
 //Global Variable
+String URLCurrentAlberta;
+String URLForecastAlberta;
 String URLCurrentEdmonton;
 String URLForecastEdmonton;
 String URLCurrentCalgary;
 String URLForecastCalgary;
-String URLCurrentVancouver;
-String URLForecastVancouver;
+String URLCurrentRedDeer;
+String URLForecastRedDeer;
 
- 
+JSONObject jsonCurrentAlberta;
+JSONObject jsonForecastAlberta;
 JSONObject jsonCurrentEdmonton;
 JSONObject jsonForecastEdmonton;
 JSONObject jsonCurrentCalgary;
 JSONObject jsonForecastCalgary;
-JSONObject jsonCurrentVancouver;
-JSONObject jsonForecastVancouver;
+JSONObject jsonCurrentRedDeer;
+JSONObject jsonForecastRedDeer;
 
 void buildingURL() {
   String baseURL_Current = "http://api.openweathermap.org/data/2.5/weather?";
   String baseURL_Forecast = "http://api.openweathermap.org/data/2.5/forecast?";
+  String albertaId = "id=5883102"; //City ID Numbers
   String edmontonId = "id=5946768";
   String calgaryId = "id=5913490";
-  String vancouverId = "id=6173331";
-  String apiKey = "APPID=eb6f025db8559f7fe536378c831d83e7"; //API Key is PRIVATE so not included here
+  String redDeerId = "id=6118158";
+  String apiKey = "APPID=06ee4dfaf9a7c9bdf9024604eda99160"; //API Key is PRIVATE so not included here
   String mode = "mode=json";
   String unitMetric = "units=metric";
   String and = "&";
 
-   
+  URLCurrentAlberta = baseURL_Current+albertaId+and+apiKey+and+mode+and+unitMetric;
+  URLForecastAlberta = baseURL_Forecast+albertaId+and+apiKey+and+mode+and+unitMetric;
   URLCurrentEdmonton = baseURL_Current+edmontonId+and+apiKey+and+mode+and+unitMetric;
   URLForecastEdmonton = baseURL_Forecast+edmontonId+and+apiKey+and+mode+and+unitMetric;
   URLCurrentCalgary = baseURL_Current+calgaryId+and+apiKey+and+mode+and+unitMetric;
   URLForecastCalgary = baseURL_Forecast+calgaryId+and+apiKey+and+mode+and+unitMetric;
-  URLCurrentVancouver  = baseURL_Current+vancouverId+and+apiKey+and+mode+and+unitMetric;
-  URLForecastVancouver = baseURL_Forecast+vancouverId+and+apiKey+and+mode+and+unitMetric;
+  URLCurrentRedDeer = baseURL_Current+redDeerId+and+apiKey+and+mode+and+unitMetric;
+  URLForecastRedDeer = baseURL_Forecast+redDeerId+and+apiKey+and+mode+and+unitMetric;
 
   //Verification in Console, copy-paste variable output to Chrome and verify data can be seen correctly
   //println(URLCurrentAlberta);
@@ -45,13 +50,14 @@ void buildingURL() {
 } //End buildingURL()
 
 void APICall() {
-  
+  jsonCurrentAlberta = loadJSONObject(URLCurrentAlberta);
+  jsonForecastAlberta = loadJSONObject(URLForecastAlberta);
   jsonCurrentEdmonton = loadJSONObject(URLCurrentEdmonton);
   jsonForecastEdmonton = loadJSONObject(URLForecastEdmonton);
   jsonCurrentCalgary = loadJSONObject(URLCurrentCalgary);
   jsonForecastCalgary = loadJSONObject(URLForecastCalgary);
-  jsonCurrentVancouver = loadJSONObject(URLCurrentVancouver);
-  jsonForecastVancouver = loadJSONObject(URLForecastVancouver);
+  jsonCurrentRedDeer = loadJSONObject(URLCurrentRedDeer);
+  jsonForecastRedDeer = loadJSONObject(URLForecastRedDeer);
 } //End APICall
 
 //Loading JSONObjects with Website API Data

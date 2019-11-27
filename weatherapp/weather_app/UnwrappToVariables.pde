@@ -1,4 +1,36 @@
-import java.util.Date; //Date Conversation, UNIX Time Stamp from Jan 1, 1970
+//UnwrapToVariables
+/* Code to Copy, use println() to verify
+ 
+ Note: use APICall() Variables here, for example jsonCurrentEdmonton
+ Caution: variables should be a mix of global and local variables
+ 
+ JSONArray weather = jsonObject-Variable.getJSONArray("weather"); //Unwrapping
+ 
+ JSONObject all = weather.getJSONObject(0); //Unwrap {}
+ String mainWeather = all.getString("main");
+ String description = all.getString("description");
+ String icon = all.getString("icon");
+ 
+ JSONObject main = jsonObject-Variable.getJSONObject("main"); //Unwrap {}
+ float temp = main.getFloat("temp");
+ float tempMin = main.getFloat("temp_min");
+ float tempMax = main.getFloat("temp_max");
+ 
+ int apiCallTime = jsonObject-Variable.getInt("dt");
+ 
+ JSONObject sys = jsonObject-Variable.getJSONObject("sys"); //Unwrap {}
+ String country = sys.getString("country");
+ int sunrise = sys.getInt("sunrise");
+ int sunset = sys.getInt("sunset");
+ 
+ String name = jsonObject-Variable.getString("name");
+ 
+ */
+
+import java.text.ParseException;  
+import java.text.SimpleDateFormat;  
+import java.util.Date;  //Date Conversation, UNIX Time Stamp from Jan 1, 1970
+import java.util.Locale;  
 
 //Global Variables
 String mainWeatherEdmonton, descriptionEdmonton, iconEdmonton, countryEdmonton, nameEdmonton;
@@ -10,14 +42,14 @@ String mainWeatherCalgary, descriptionCalgary, iconCalgary, countryCalgary, name
 float tempCalgary, tempMinCalgary, tempMaxCalgary;
 int apiCallTimeCalgary, sunriseCalgary, sunsetCalgary;
 
-String mainWeatherVancouver, descriptionVancouver, iconVancouver, countryVancouver, nameVancouver;
-float tempVancouver, tempMinVancouver, tempMaxVancouver;
-int apiCallTimeVancouver, sunriseVancouver, sunsetVancouver;
+String mainWeatherRedDeer, descriptionRedDeer, iconRedDeer, countryRedDeer, nameRedDeer;
+float tempRedDeer, tempMinRedDeer, tempMaxRedDeer;
+int apiCallTimeRedDeer, sunriseRedDeer, sunsetRedDeer;
 
 void unwrapToVariables() {
   currentEdmonton();
   currentCalgary();
-  currentVancouver();
+  currentRedDeer();
 }
 
 Date humanDate(long unixTime) {
@@ -72,25 +104,25 @@ void currentCalgary() {
   nameCalgary = jsonCurrentCalgary.getString("name");
 }
 
-void currentVancouver() {
-  JSONArray weatherVancouver = jsonCurrentVancouver.getJSONArray("weather"); //Unwrapping
+void currentRedDeer() {
+  JSONArray weatherRedDeer = jsonCurrentRedDeer.getJSONArray("weather"); //Unwrapping
 
-  JSONObject allVancouver = weatherVancouver.getJSONObject(0); //Unwrap {}
-  mainWeatherVancouver = allVancouver.getString("main");
-  descriptionVancouver = allVancouver.getString("description");
-  iconVancouver = allVancouver.getString("icon");
+  JSONObject allRedDeer = weatherRedDeer.getJSONObject(0); //Unwrap {}
+  mainWeatherRedDeer = allRedDeer.getString("main");
+  descriptionRedDeer = allRedDeer.getString("description");
+  iconRedDeer = allRedDeer.getString("icon");
 
-  JSONObject mainVancouver = jsonCurrentVancouver.getJSONObject("main"); //Unwrap {}
-  tempVancouver = mainVancouver.getFloat("temp");
-  tempMinVancouver = mainVancouver.getFloat("temp_min");
-  tempMaxVancouver = mainVancouver.getFloat("temp_max");
+  JSONObject mainRedDeer = jsonCurrentRedDeer.getJSONObject("main"); //Unwrap {}
+  tempRedDeer = mainRedDeer.getFloat("temp");
+  tempMinRedDeer = mainRedDeer.getFloat("temp_min");
+  tempMaxRedDeer = mainRedDeer.getFloat("temp_max");
 
-  apiCallTimeVancouver = jsonCurrentVancouver.getInt("dt");
+  apiCallTimeRedDeer = jsonCurrentRedDeer.getInt("dt");
 
-  JSONObject sysVancouver = jsonCurrentVancouver.getJSONObject("sys"); //Unwrap {}
-  countryVancouver = sysVancouver.getString("country");
-  sunriseVancouver = sysVancouver.getInt("sunrise");
-  sunsetVancouver = sysVancouver.getInt("sunset");
+  JSONObject sysRedDeer = jsonCurrentRedDeer.getJSONObject("sys"); //Unwrap {}
+  countryRedDeer = sysRedDeer.getString("country");
+  sunriseRedDeer = sysRedDeer.getInt("sunrise");
+  sunsetRedDeer = sysRedDeer.getInt("sunset");
 
-  nameVancouver = jsonCurrentVancouver.getString("name");
+  nameRedDeer = jsonCurrentRedDeer.getString("name");
 }

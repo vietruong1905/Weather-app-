@@ -25,8 +25,7 @@ void GUI_Setup() {
  quitRecWidth = width *1/10;
  quitRecHeight = height *1/10;
  rect(quitX, quitY, quitRecWidth, quitRecHeight);
-//
-  
+ 
  //
  TempX= width*1/5;
  TempY=height*1/10;

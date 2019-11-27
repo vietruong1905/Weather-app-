@@ -1,4 +1,4 @@
- //Global Variable
+//Global Variable
 PFont titleFont;
 //String[] fontList = PFont.list(); //To list all fonts available on system
 float titleWidth, titleHeight;
@@ -7,18 +7,18 @@ float currentTempEdm, currentTempCalgary, currentTempRD;
 String nameEdm, nameCalg, nameRD;
 
 void textSetup() {
-  titleFont = createFont ("Power Clear Bold", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
-  title = "Viet's weather app";
+  titleFont = createFont ("Harrington", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
+  title = "Mercer's Kitchen Fastantic Weather App";
   titleWidth = width * 1/2;
   titleHeight = height * 1/10;
   quit = "X";
   //apiCurrentDateCall, varaible to print to Canvas
   currentTempEdm = tempEdmonton;
   currentTempCalgary = tempCalgary;
-  currentTempRD = tempVancouver;
+  currentTempRD = tempRedDeer;
   nameEdm = nameEdmonton;
-  nameCalg= nameCalgary;
-  nameRD = nameVancouver;
+  nameCalg = nameCalgary;
+  nameRD = nameRedDeer;
 
   //printArray(fontList); //For listing all possible fonts to choose, then createFont
 }
