@@ -3,22 +3,22 @@ PFont titleFont;
 //String[] fontList = PFont.list(); //To list all fonts available on system
 float titleWidth, titleHeight;
 String title, quit;
-float currentTempEdm, currentTempCalgary, currentTempRD;
-String nameEdm, nameCalg, nameRD;
+float currentTempEdm, currentTempCalgary, currentTempCT;
+String nameEdm, nameCalg, nameCT;
 
 void textSetup() {
-  titleFont = createFont ("Harrington", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
-  title = "Mercer's Kitchen Fastantic Weather App";
+  titleFont = createFont ("Century", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
+  title = "Viet Truong's Weather App";
   titleWidth = width * 1/2;
   titleHeight = height * 1/10;
   quit = "X";
   //apiCurrentDateCall, varaible to print to Canvas
   currentTempEdm = tempEdmonton;
   currentTempCalgary = tempCalgary;
-  currentTempRD = tempRedDeer;
+  currentTempCT = tempChita;
   nameEdm = nameEdmonton;
   nameCalg = nameCalgary;
-  nameRD = nameRedDeer;
+  nameCT = nameChita;
 
   //printArray(fontList); //For listing all possible fonts to choose, then createFont
 }

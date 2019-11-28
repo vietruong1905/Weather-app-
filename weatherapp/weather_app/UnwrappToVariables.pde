@@ -42,14 +42,14 @@ String mainWeatherCalgary, descriptionCalgary, iconCalgary, countryCalgary, name
 float tempCalgary, tempMinCalgary, tempMaxCalgary;
 int apiCallTimeCalgary, sunriseCalgary, sunsetCalgary;
 
-String mainWeatherRedDeer, descriptionRedDeer, iconRedDeer, countryRedDeer, nameRedDeer;
-float tempRedDeer, tempMinRedDeer, tempMaxRedDeer;
-int apiCallTimeRedDeer, sunriseRedDeer, sunsetRedDeer;
+String mainWeatherChita, descriptionChita, iconChita, countryChita, nameChita;
+float tempChita, tempMinChita, tempMaxChita;
+int apiCallTimeChita, sunriseChita, sunsetChita;
 
 void unwrapToVariables() {
   currentEdmonton();
   currentCalgary();
-  currentRedDeer();
+  currentChita();
 }
 
 Date humanDate(long unixTime) {
@@ -104,25 +104,25 @@ void currentCalgary() {
   nameCalgary = jsonCurrentCalgary.getString("name");
 }
 
-void currentRedDeer() {
-  JSONArray weatherRedDeer = jsonCurrentRedDeer.getJSONArray("weather"); //Unwrapping
+void currentChita() {
+  JSONArray weatherChita = jsonCurrentChita.getJSONArray("weather"); //Unwrapping
 
-  JSONObject allRedDeer = weatherRedDeer.getJSONObject(0); //Unwrap {}
-  mainWeatherRedDeer = allRedDeer.getString("main");
-  descriptionRedDeer = allRedDeer.getString("description");
-  iconRedDeer = allRedDeer.getString("icon");
+  JSONObject allChita = weatherChita.getJSONObject(0); //Unwrap {}
+  mainWeatherChita = allChita.getString("main");
+  descriptionChita = allChita.getString("description");
+  iconChita = allChita.getString("icon");
 
-  JSONObject mainRedDeer = jsonCurrentRedDeer.getJSONObject("main"); //Unwrap {}
-  tempRedDeer = mainRedDeer.getFloat("temp");
-  tempMinRedDeer = mainRedDeer.getFloat("temp_min");
-  tempMaxRedDeer = mainRedDeer.getFloat("temp_max");
+  JSONObject mainChita = jsonCurrentChita.getJSONObject("main"); //Unwrap {}
+  tempChita = mainChita.getFloat("temp");
+  tempMinChita= mainChita.getFloat("temp_min");
+  tempMaxChita = mainChita.getFloat("temp_max");
 
-  apiCallTimeRedDeer = jsonCurrentRedDeer.getInt("dt");
+  apiCallTimeChita = jsonCurrentChita.getInt("dt");
 
-  JSONObject sysRedDeer = jsonCurrentRedDeer.getJSONObject("sys"); //Unwrap {}
-  countryRedDeer = sysRedDeer.getString("country");
-  sunriseRedDeer = sysRedDeer.getInt("sunrise");
-  sunsetRedDeer = sysRedDeer.getInt("sunset");
+  JSONObject sysChita = jsonCurrentChita.getJSONObject("sys"); //Unwrap {}
+  countryChita = sysChita.getString("country");
+  sunriseChita = sysChita.getInt("sunrise");
+  sunsetChita = sysChita.getInt("sunset");
 
-  nameRedDeer = jsonCurrentRedDeer.getString("name");
+  nameChita = jsonCurrentChita.getString("name");
 }

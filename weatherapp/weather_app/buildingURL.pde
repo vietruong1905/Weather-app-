@@ -5,8 +5,8 @@ String URLCurrentEdmonton;
 String URLForecastEdmonton;
 String URLCurrentCalgary;
 String URLForecastCalgary;
-String URLCurrentRedDeer;
-String URLForecastRedDeer;
+String URLCurrentChita;
+String URLForecastChita;
 
 JSONObject jsonCurrentAlberta;
 JSONObject jsonForecastAlberta;
@@ -14,8 +14,8 @@ JSONObject jsonCurrentEdmonton;
 JSONObject jsonForecastEdmonton;
 JSONObject jsonCurrentCalgary;
 JSONObject jsonForecastCalgary;
-JSONObject jsonCurrentRedDeer;
-JSONObject jsonForecastRedDeer;
+JSONObject jsonCurrentChita;
+JSONObject jsonForecastChita;
 
 void buildingURL() {
   String baseURL_Current = "http://api.openweathermap.org/data/2.5/weather?";
@@ -23,8 +23,8 @@ void buildingURL() {
   String albertaId = "id=5883102"; //City ID Numbers
   String edmontonId = "id=5946768";
   String calgaryId = "id=5913490";
-  String redDeerId = "id=6118158";
-  String apiKey = "APPID=06ee4dfaf9a7c9bdf9024604eda99160"; //API Key is PRIVATE so not included here
+  String ChitaId = "id=2025339";
+  String apiKey = "APPID=eb6f025db8559f7fe536378c831d83e7"; //API Key is PRIVATE so not included here
   String mode = "mode=json";
   String unitMetric = "units=metric";
   String and = "&";
@@ -35,8 +35,8 @@ void buildingURL() {
   URLForecastEdmonton = baseURL_Forecast+edmontonId+and+apiKey+and+mode+and+unitMetric;
   URLCurrentCalgary = baseURL_Current+calgaryId+and+apiKey+and+mode+and+unitMetric;
   URLForecastCalgary = baseURL_Forecast+calgaryId+and+apiKey+and+mode+and+unitMetric;
-  URLCurrentRedDeer = baseURL_Current+redDeerId+and+apiKey+and+mode+and+unitMetric;
-  URLForecastRedDeer = baseURL_Forecast+redDeerId+and+apiKey+and+mode+and+unitMetric;
+  URLCurrentChita = baseURL_Current+ChitaId+and+apiKey+and+mode+and+unitMetric;
+  URLForecastChita = baseURL_Forecast+ChitaId+and+apiKey+and+mode+and+unitMetric;
 
   //Verification in Console, copy-paste variable output to Chrome and verify data can be seen correctly
   //println(URLCurrentAlberta);
@@ -56,8 +56,8 @@ void APICall() {
   jsonForecastEdmonton = loadJSONObject(URLForecastEdmonton);
   jsonCurrentCalgary = loadJSONObject(URLCurrentCalgary);
   jsonForecastCalgary = loadJSONObject(URLForecastCalgary);
-  jsonCurrentRedDeer = loadJSONObject(URLCurrentRedDeer);
-  jsonForecastRedDeer = loadJSONObject(URLForecastRedDeer);
+  jsonCurrentChita = loadJSONObject(URLCurrentChita);
+  jsonForecastChita = loadJSONObject(URLForecastChita);
 } //End APICall
 
 //Loading JSONObjects with Website API Data
