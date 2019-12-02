@@ -1,6 +1,6 @@
 //Global Variable
-String URLCurrentAlberta;
-String URLForecastAlberta;
+//String URLCurrentAlberta;
+//String URLForecastAlberta;
 String URLCurrentEdmonton;
 String URLForecastEdmonton;
 String URLCurrentCalgary;
@@ -8,8 +8,8 @@ String URLForecastCalgary;
 String URLCurrentChita;
 String URLForecastChita;
 
-JSONObject jsonCurrentAlberta;
-JSONObject jsonForecastAlberta;
+//JSONObject jsonCurrentAlberta;
+//JSONObject jsonForecastAlberta;
 JSONObject jsonCurrentEdmonton;
 JSONObject jsonForecastEdmonton;
 JSONObject jsonCurrentCalgary;
@@ -20,7 +20,7 @@ JSONObject jsonForecastChita;
 void buildingURL() {
   String baseURL_Current = "http://api.openweathermap.org/data/2.5/weather?";
   String baseURL_Forecast = "http://api.openweathermap.org/data/2.5/forecast?";
-  String albertaId = "id=5883102"; //City ID Numbers
+ // String albertaId = "id=5883102"; //City ID Numbers
   String edmontonId = "id=5946768";
   String calgaryId = "id=5913490";
   String ChitaId = "id=2025339";
@@ -29,8 +29,7 @@ void buildingURL() {
   String unitMetric = "units=metric";
   String and = "&";
 
-  URLCurrentAlberta = baseURL_Current+albertaId+and+apiKey+and+mode+and+unitMetric;
-  URLForecastAlberta = baseURL_Forecast+albertaId+and+apiKey+and+mode+and+unitMetric;
+ 
   URLCurrentEdmonton = baseURL_Current+edmontonId+and+apiKey+and+mode+and+unitMetric;
   URLForecastEdmonton = baseURL_Forecast+edmontonId+and+apiKey+and+mode+and+unitMetric;
   URLCurrentCalgary = baseURL_Current+calgaryId+and+apiKey+and+mode+and+unitMetric;
@@ -50,8 +49,7 @@ void buildingURL() {
 } //End buildingURL()
 
 void APICall() {
-  jsonCurrentAlberta = loadJSONObject(URLCurrentAlberta);
-  jsonForecastAlberta = loadJSONObject(URLForecastAlberta);
+ 
   jsonCurrentEdmonton = loadJSONObject(URLCurrentEdmonton);
   jsonForecastEdmonton = loadJSONObject(URLForecastEdmonton);
   jsonCurrentCalgary = loadJSONObject(URLCurrentCalgary);

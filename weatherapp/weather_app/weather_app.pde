@@ -1,12 +1,12 @@
-// Open Weather Map App
+  // Open Weather Map App
 // Global Variables
-String edmTemp, calgTemp, CTTemp;
+String edmTemp, calgTemp, CTTemp, edminTemp;
 
 void setup() {
   buildingURL();
   APICall();
   unwrapToVariables();
-  size(500, 600); //Add Screen Size Checker
+  size(700, 600); //Add Screen Size Checker
   // Add fullScreen() option, with Display Size Checker
   GUI_Setup();
 
@@ -21,10 +21,10 @@ void setup() {
  // String strDate = formatter.format(apiCurrentDateCall);
   //textDraw(strDate, titleFont, height, #2C08FF, LEFT, CENTER, currentAPIX, currentAPIY, currentAPIRectWidth, currentAPIRectHeight); //Time Stamp
   println("in");
-  textDraw(nameEdm, titleFont, height, #2C08FF, LEFT, CENTER, EDMx, EDMy, EDMwidth, EDMheight); //Edmonton
+  textDraw(nameEdm, titleFont, height, #2C08FF, CENTER , CENTER, EDMx, EDMy, EDMwidth, EDMheight); //Edmonton
   println(nameEdm);
-  textDraw(nameCalg, titleFont, height, #2C08FF, LEFT, CENTER, Calx, Caly, Calwidth, Calheight); //Calgary
-  textDraw(nameCT, titleFont, height, #2C08FF, LEFT, CENTER, Vanx, Vany, Vanwidth, Vanheight); //Red Deer
+  textDraw(nameCalg, titleFont, height, #2C08FF, CENTER , CENTER, Calx, Caly, Calwidth, Calheight); //Calgary
+  textDraw(nameCT, titleFont, height, #2C08FF, CENTER , CENTER, Vanx, Vany, Vanwidth, Vanheight); //Red Deer
 }
 
 void draw() {
@@ -44,6 +44,13 @@ void mousePressed() {
     rect(TempX, TempY, TempRecwidth, TempRecHeight);
     textDraw(edmTemp, titleFont, height, #2C08FF, CENTER, CENTER, TempX, TempY, TempRecwidth, TempRecHeight); //Edmonton
     println(tempEdmonton, edmTemp);
+  }
+  //
+  if ( mouseX>Tmx && mouseX<Tmx+Tmwidth && mouseY>Tmy && mouseY<Tmy+Tmheight ) {
+    edminTemp = String.valueOf(tempMinEdmonton);
+    rect(Tmx, Tmy, Tmwidth, Tmheight);
+    textDraw(edminTemp, titleFont, height, #2C08FF, CENTER, CENTER, Tmx, Tmy, Tmwidth, Tmheight); //Edmonton
+    println(tempMinEdmonton, edminTemp);
   }
   //
   if (mouseX>Calx && mouseX<Calx+Calwidth && mouseY>Caly && mouseY<Caly+Calheight) {

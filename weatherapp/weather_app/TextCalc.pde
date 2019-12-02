@@ -29,11 +29,11 @@ void textDraw(String string, PFont font, float height, color ink, int alignHoriz
   textAlign (alignHorizontal, alignVertical); //Align X&Y, see Processing.org / Reference
   //Values: LEFT | CENTER | RIGHT & TOP | CENTER | BOTTOM | BASELINE
   //Parameters change depending on font and serifs
-  if (string.length() >= 3) {
+  if (string.length() >= 18) {
     fontSize = textCalculator(height, string, rectWidth);
   } 
   else {
-    fontSize = fontSize * 0.08;
+    fontSize = fontSize * 0.06;
   }
   textFont(font, fontSize); //Change the number until it fits, largest font size
   text(string, rectX, rectY, rectWidth, rectHeight); //add rect() parameters
